@@ -1,14 +1,27 @@
-﻿using System.ComponentModel.DataAnnotations;
-namespace api_aquaguard_dotnet.Models;
-public class Sensor
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
+
+namespace api_aquaguard_dotnet.Models
 {
-    [Key]
-    public int IdSensor { get; set; }
-    public string Tipo { get; set; }
 
-    [RegularExpression("ATIVO|INATIVO")]
-    public string Status { get; set; }
+    [Table("TB_AQUA_SENSOR")]
+    public class Sensor
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("ID_SENSOR")]
+        public int IdSensor { get; set; }
 
-    public ICollection<Regiao> Regioes { get; set; } = new List<Regiao>();
+        [Required]
+        [Column("TIPO")]
+        public string Tipo { get; set; }
 
+        [Required]
+        [RegularExpression("ATIVO|INATIVO")]
+        [Column("STATUS")]
+        public string Status { get; set; }
+
+        public ICollection<Regiao> Regioes { get; set; } = new List<Regiao>();
+    }
 }

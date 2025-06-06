@@ -7,7 +7,14 @@ var builder = WebApplication.CreateBuilder(args);
 // Configurar banco (substituir pela string correta depois)
 
 builder.Services.AddDbContext<AquaGuardContext>(options =>
-    options.UseInMemoryDatabase("AquaGuardDB"));
+    options.UseOracle(
+        "User Id=rm554983;Password=191205;" +
+        "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oracle.fiap.com.br)(PORT=1521))" +
+        "(CONNECT_DATA=(SERVICE_NAME=ORCL)))"
+    )
+);
+
+
 
 
 builder.Services.AddControllers();

@@ -1,10 +1,14 @@
 ﻿@page
-@model IndexModel
+@model api_aquaguard_dotnet.Pages.IndexModel
 @{
-    ViewData["Title"] = "Home page";
+    ViewData["Title"] = "AquaGuard - Home";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
-</div>
+<h1>@ViewData["Title"]</h1>
+<p>Bem-vindo ao AquaGuard!</p>
+
+<!-- Exemplo de TagHelper: link para recarregar a própria página -->
+<a asp-page="/Index" class="btn btn-primary">Recarregar</a>
+
+<!-- Link direto para o SwaggerUI -->
+<a class="btn btn-outline-secondary" href="/swagger">Ir para Swagger</a>

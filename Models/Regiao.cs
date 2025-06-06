@@ -1,22 +1,37 @@
-﻿using System.ComponentModel.DataAnnotations;
-namespace api_aquaguard_dotnet.Models;
+﻿using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
-public class Regiao
+namespace api_aquaguard_dotnet.Models
 {
-    [Key]
-    public int IdRegiao { get; set; }
+ 
+    [Table("TB_AQUA_REGIAO")]
+    public class Regiao
+    {
+        [Key]
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Column("ID_REGIAO")]      
+        public int IdRegiao { get; set; }
 
-    [Required]
-    public string NmRegiao { get; set; }
+        [Required]
+        [Column("NM_REGIAO")]
+        public string NmRegiao { get; set; }
 
-    [Required]
-    public string NmCidade { get; set; }
+        [Required]
+        [Column("NM_CIDADE")]
+        public string NmCidade { get; set; }
 
-    public string CoordenadasLat { get; set; }
-    public string CoordenadasLng { get; set; }
+        [Column("COORDENADAS_LAT")]
+        public string CoordenadasLat { get; set; }
 
-    public int IdSensor { get; set; }
-    public Sensor Sensor { get; set; }
+        [Column("COORDENADAS_LNG")]
+        public string CoordenadasLng { get; set; }
 
-    public ICollection<Alerta> Alertas { get; set; }
+        [Column("ID_SENSOR")]
+        public int IdSensor { get; set; }
+
+        public Sensor Sensor { get; set; }
+
+        public ICollection<Alerta> Alertas { get; set; } = new List<Alerta>();
+    }
 }
