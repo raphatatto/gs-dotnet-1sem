@@ -14,6 +14,7 @@ Este repositório contém a API RESTful do **AquaGuard**, conforme os requisitos
   - [🛠️ Migrations e atualização do banco](#️-migrations-e-atualização-do-banco)
 - [Como funciona a geração de IDs (sequence + trigger)](#como-funciona-a-geração-de-ids-sequence--trigger)
   - [🔗 Estrutura de pastas resumida](#-estrutura-de-pastas-resumida)
+  - [🖼️ Diagrama](#diagrama)  
   - [🎥 Vídeo de demonstração e Pitch](#-vídeo-de-demonstração-e-pitch)
 
 ---
@@ -242,11 +243,40 @@ api-aquaguard-dotnet/
 └── README.md
 ```
 
+## 🖼️ Diagrama
+
+### Diagrama de Classes (UML)
+
+```mermaid
+classDiagram
+    class Sensor {
+      +int IdSensor
+      +string Tipo
+      +string Status
+    }
+    class Regiao {
+      +int IdRegiao
+      +string NmRegiao
+      +string NmCidade
+      +string CoordenadasLat
+      +string CoordenadasLng
+      +int IdSensor
+    }
+    class Alerta {
+      +int IdAlerta
+      +string NivelRisco
+      +string DsAlerta
+      +DateTime DtAlerta
+      +int IdRegiao
+    }
+    Sensor "1" --o "*" Regiao  
+    Regiao "1" --o "*" Alerta 
+```
 ---
 
 ## 🎥 Vídeo de demonstração e Pitch
+- **Vídeo demonstração do projeto**: https://youtu.be/ocFv_mXoy0g 
+- **Vídeo Pitch (máx. 3 minutos)**: [link do pitch]
 
-- **Vídeo demonstração (máx. 8 minutos)**: [link do vídeo completo]  
-- **Vídeo Pitch (máx. 3 minutos)**: [link do vídeo pitch]
 
 
