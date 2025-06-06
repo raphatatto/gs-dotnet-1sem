@@ -1,0 +1,49 @@
+## Build
+bin/
+obj/
+out/
+
+## Usuário do Visual Studio
+.vs/
+*.user
+*.suo
+
+## Logs
+*.log
+
+## Configurações locais
+appsettings.Development.json
+appsettings.Local.json
+secrets.json
+
+## Arquivos temporários
+*.tmp
+*.temp
+*.bak
+*.swp
+
+## Sistema operacional
+.DS_Store
+Thumbs.db
+
+## Pacotes NuGet
+*.nupkg
+packages/
+
+## Migrations (opcional — remova se quiser versionar)
+Migrations/
+
+## Publicações
+publish/
+*.Publish.xml
+
+## Rider / JetBrains IDEs
+.idea/
+*.sln.iml
+
+## Testes
+TestResults/
+coverage/
+
+## VS Code
+.vscode/
