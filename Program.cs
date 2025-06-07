@@ -8,7 +8,7 @@ var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddDbContext<AquaGuardContext>(options =>
     options.UseOracle(
-        "User Id=rm554983;Password=191205;" +
+        "User Id=rm558021;Password=240506;" +
         "Data Source=(DESCRIPTION=(ADDRESS=(PROTOCOL=TCP)(HOST=oracle.fiap.com.br)(PORT=1521))" +
         "(CONNECT_DATA=(SERVICE_NAME=ORCL)))"
     )
@@ -20,7 +20,7 @@ builder.Services.AddDbContext<AquaGuardContext>(options =>
 builder.Services.AddControllers();
 builder.Services.AddRazorPages();
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
+builder.Services.AddSwaggerGen(); 
 
 var app = builder.Build();
 
