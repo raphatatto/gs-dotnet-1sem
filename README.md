@@ -276,7 +276,7 @@ classDiagram
 
 ## 🎥 Vídeo de demonstração e Pitch
 - **Vídeo demonstração do projeto**: https://youtu.be/ocFv_mXoy0g 
-- **Vídeo Pitch (máx. 3 minutos)**: [link do pitch]
+- **Vídeo Pitch (máx. 3 minutos)**: https://youtu.be/7PS6rra8hOE
 
 
 
